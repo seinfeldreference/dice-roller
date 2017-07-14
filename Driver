@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Driver {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String roll, sub;
+		int result, index, faces, die;
+		
+		System.out.println("What would you like to roll?");
+		roll = input.nextLine();
+		index = roll.indexOf('d');
+		
+		sub = roll.substring(0, index);
+		die = Integer.parseInt(sub);
+		
+		sub = roll.substring(index + 1);
+		faces = Integer.parseInt(sub);
+		
+		for(int count = 0; count < die; count++) {
+			result = (int)(Math.random() * faces + 1);
+			System.out.println("You rolled a " + result);
+		}
+	}
+}
